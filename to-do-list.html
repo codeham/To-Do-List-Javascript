@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
+	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:200|Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
+
+	<!-- Bootstrap Import -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
+
 	<title>To Do List</title>
 </head>
 <body>
@@ -19,8 +22,7 @@
 	<div class="container">
 	<div class="row">
 		<div class="text-center col-md-4 col-md-offset-4">
-			<p>I am in the middle</p>
-			<div id ="date-display"></div>
+			<!-- <div id ="date-display"></div> -->
 		</div>
 	</div>
 	<div class="row">
@@ -35,12 +37,13 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-3 col-md-offset-">
-			<h1 id="list-title" name="list-title">To Do</h1>
+		<div class="col-md-6">
+			<h1 class="bg-danger" id="list-title" name="list-title">To Do</h1>
 			<ul id="to-do"></ul>
 		</div>
-		<div class="col-md-3 col-md-offset-">
-			<h1 id="list-title" name="list-title">Done</h1>
+
+		<div class="col-md-6">
+			<h1 class="bg-success" id="list-title" name="list-title">Done</h1>
 			<ul id="done"></ul>	
 		</div>
 	</div>
@@ -58,18 +61,18 @@
 		/* element injection inside list */
 		var makeTaskHtml = function(str, onCheck){
 			var element = document.createElement('li');
-			var checkmark = document.createElement('span');
+			var checkPin = document.createElement('span');
 			var label = document.createElement('span');
 
 			/* assign glyp to element */
-			checkmark.className = "glyphicon glyphicon-pushpin";
+			checkPin.className = "glyphicon glyphicon-pushpin";
 	
 			/* append string to text content */
 			label.textContent = str;
 
 			/* appending both checkbox and label to element ref */
-			element.appendChild(checkmark);
-			checkmark.addEventListener('click', onCheck);
+			element.appendChild(checkPin);
+			checkPin.addEventListener('click', onCheck);
 			element.appendChild(label);
 
 			return element;
@@ -121,7 +124,7 @@
 
 			for ( var i = 0; i < elements.length; i++ ){
 				/* unhide these elements */
-				$(elements[i]).addClass()
+				// $(elements[i]).addClass()
 				elements[i].style.display = 'block';
 			}
 		}
@@ -143,9 +146,9 @@
 
 
 		/*DATE DISPLAY */
-		var date = new Date();
-		document.getElementById("date-display").innerHTML = 
-		date.getMonth() + '-' + date.getDay() + '-' + date.getFullYear();
+		// var date = new Date();
+		// document.getElementById("date-display").innerHTML = 
+		// date.getMonth() + '-' + date.getDay() + '-' + date.getFullYear();
 
 		/* ADD BUTTON LISTENER */
 		addbutton.addEventListener('click', onInput);
@@ -167,5 +170,8 @@
 
 	}());
 </script>
+	<!-- Javascript  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
