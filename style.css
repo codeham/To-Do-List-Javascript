@@ -1,0 +1,32 @@
+	.jumbotron {
+		background-color: white;
+		font-size: 35px;
+		font-family: 'Roboto', sans-serif;
+		padding-bottom: 5px;
+	}
+	.button-content {
+		padding-top: 10px;
+	}
+/*	body {
+		font-family: "Roboto", sans-serif;
+		font-size: 17px;
+		text-align: center;
+		padding-top: 10px;
+	}*/
+	ul {
+		font-size: 29px;
+		list-style: none;
+/*		 		padding: 30px;
+		margin: 10px;
+		width: 30%;*/
+/*		border: 3px solid skyblue;*/
+	}
+	#list-title{
+		display: none;
+		text-align: center;
+	}
+	ul li {
+		/* spacing between list items */
+  
+
+	}
