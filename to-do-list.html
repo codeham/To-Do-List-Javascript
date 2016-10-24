@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:200|Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400|Roboto|BioRhyme" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 
 	<!-- Bootstrap Import -->
@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="jumbotron text-center">
-		<h1>To Do List</h1>
+		<h1>To-Do List</h1>
 	</div>
 	<div class="container">
 	<div class="row">
@@ -64,7 +64,7 @@
 			var checkPin = document.createElement('span');
 			var label = document.createElement('span');
 
-			/* assign glyp to element */
+			/* assign glyphicon to element */
 			checkPin.className = "glyphicon glyphicon-pushpin";
 	
 			/* append string to text content */
@@ -101,8 +101,8 @@
 			var task = event.target.parentElement;
 			var list = task.parentElement.id;
 
-			var pushpinClass = task.getElementsByClassName("glyphicon glyphicon-pushpin")[0]
-			var okClass = task.getElementsByClassName("glyphicon glyphicon-ok")[0]
+			var pushpinClass = task.getElementsByClassName("glyphicon glyphicon-pushpin")[0];
+			var okClass = task.getElementsByClassName("glyphicon glyphicon-ok")[0];
 
 			if ( list == 'to-do'){
 				/* replace pushpin with ok */
@@ -123,8 +123,7 @@
 			var elements = document.getElementsByName("list-title");
 
 			for ( var i = 0; i < elements.length; i++ ){
-				/* unhide these elements */
-				// $(elements[i]).addClass()
+				/* unhide these elements (list titles)*/
 				elements[i].style.display = 'block';
 			}
 		}
@@ -141,9 +140,6 @@
 			}
 
 		};
-
-
-
 
 		/*DATE DISPLAY */
 		// var date = new Date();

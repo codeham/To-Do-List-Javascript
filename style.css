@@ -1,32 +1,39 @@
 	.jumbotron {
 		background-color: white;
 		font-size: 35px;
-		font-family: 'Roboto', sans-serif;
+		font-family: 'BioRhyme', sans-serif;
 		padding-bottom: 5px;
+	}
+	.bg-danger, .bg-success{
+		padding: 3.2px 3.2px;
+		margin-bottom: 10px;
 	}
 	.button-content {
 		padding-top: 10px;
 		padding-bottom: 35px;
 	}
-	ul {
-		list-style: none;
-		font-size: 25px;
-		font-weight: bold;
-/*		 		padding: 30px;
-		margin: 10px;
-		width: 30%;*/
-/*		border: 3px solid skyblue;*/
-	}
+
 	#list-title{
 		display: none;
 		font-size: 30px;
-		font-family: 'Proza Libre', sans-serif;
-	}
-	ul li {
-		/* spacing between list items */
-  		padding-bottom: 4px;
+		font-family: 'Raleway', sans-serif;
 	}
 
+/*****************************************/
+	/* list style */
+
+	ul {
+		list-style: none;
+		font-size: 25px;
+	}
+
+	/* spacing between list items */
+
+	ul li {
+  		padding-bottom: 4px;
+	}
+	
+/*****************************************/
 	/* glyphyicon style */
 
 	.glyphicon {
