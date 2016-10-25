@@ -1,30 +1,50 @@
+	body {
+		/* default text color & text transformation*/
+		color: #333; 
+		text-transform: capitalize;
+	}
+
+/*****************************************/
+	/* top page content */
 	.jumbotron {
 		background-color: white;
 		font-size: 35px;
 		font-family: 'BioRhyme', sans-serif;
-		padding-bottom: 5px;
+		padding-bottom: 0px;
 	}
-	.bg-danger, .bg-success{
-		padding: 3.2px 3.2px;
-		margin-bottom: 10px;
+	#date-display{
+		font-size: 13px;
+
+/*****************************************/
+	/* button(s) style */
+
 	}
 	.button-content {
 		padding-top: 10px;
 		padding-bottom: 35px;
 	}
 
+	/*list title text*/
+
 	#list-title{
 		display: none;
-		font-size: 30px;
+		font-size: 24px;
+		padding-left: 10px;
 		font-family: 'Raleway', sans-serif;
 	}
 
 /*****************************************/
 	/* list style */
 
+	.bg-danger, .bg-success {
+		padding: 3.5px 3.5px 3.5px 3.5px;
+		margin-bottom: 10px;
+		border-radius: 20px;
+	}
+
 	ul {
 		list-style: none;
-		font-size: 25px;
+		font-size: 20px;
 	}
 
 	/* spacing between list items */
@@ -32,7 +52,7 @@
 	ul li {
   		padding-bottom: 4px;
 	}
-	
+
 /*****************************************/
 	/* glyphyicon style */
 

@@ -18,6 +18,7 @@
 <body>
 	<div class="jumbotron text-center">
 		<h1>To-Do List</h1>
+		<h3 id="date-display"></h3>
 	</div>
 	<div class="container">
 	<div class="row">
@@ -27,7 +28,7 @@
 	</div>
 	<div class="row">
 		<div class="text-center col-md-4 col-md-offset-4">
-			<input class="form-control" type="text" value="" id="input" placeholder="enter task">
+			<input class="form-control" type="text" value="" id="input" placeholder="enter task...">
 		</div>
 	</div>
 	<div class="row button-content">
@@ -38,7 +39,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6">
-			<h1 class="bg-danger" id="list-title" name="list-title">To Do</h1>
+			<h1 class="bg-danger" id="list-title" name="list-title">To-Do</h1>
 			<ul id="to-do"></ul>
 		</div>
 
@@ -48,125 +49,9 @@
 		</div>
 	</div>
 	</div>
-<script type="text/javascript">
-	(function(){
-		var todoCount = 0;
-		var input = document.getElementById('input');
-		var btn = document.getElementById('add-button');
-		var lists = {
-			todo: document.getElementById('to-do'),
-			done: document.getElementById('done')
-		};
 
-		/* element injection inside list */
-		var makeTaskHtml = function(str, onCheck){
-			var element = document.createElement('li');
-			var checkPin = document.createElement('span');
-			var label = document.createElement('span');
-
-			/* assign glyphicon to element */
-			checkPin.className = "glyphicon glyphicon-pushpin";
-	
-			/* append string to text content */
-			label.textContent = str;
-
-			/* appending both checkbox and label to element ref */
-			element.appendChild(checkPin);
-			checkPin.addEventListener('click', onCheck);
-			element.appendChild(label);
-
-			return element;
-		};
-
-		/* Test Tasks */
-		// lists.todo.appendChild(makeTaskHtml('Test Task'));
-		// lists.done.appendChild(makeTaskHtml('Test Task #2'));
-
-		var addTask = function(task){
-			lists.todo.appendChild(task);
-			todoCount++;
-		};
-
-		var flushDone = function(){
-			if (confirm("Delete All Items On List ?")){
-				var doneCount = lists.done.childNodes.length;
-
-				for ( var i = 0; i < doneCount; i++ ){
-					lists.done.removeChild(lists.done.lastChild);
-				}
-			}
-		};
-
-		var onCheck = function(event){
-			var task = event.target.parentElement;
-			var list = task.parentElement.id;
-
-			var pushpinClass = task.getElementsByClassName("glyphicon glyphicon-pushpin")[0];
-			var okClass = task.getElementsByClassName("glyphicon glyphicon-ok")[0];
-
-			if ( list == 'to-do'){
-				/* replace pushpin with ok */
-				pushpinClass.className = "glyphicon glyphicon-ok";	
-				lists.done.appendChild(task);
-				todoCount--;
-			}else{
-				/* replace ok with pushpin */
-				okClass.className = "glyphicon glyphicon-pushpin";
-				lists.todo.appendChild(task);
-				todoCount++;
-			}
-
-		};
-
-		var showLists = function(){
-			/*node list of elements by name */
-			var elements = document.getElementsByName("list-title");
-
-			for ( var i = 0; i < elements.length; i++ ){
-				/* unhide these elements (list titles)*/
-				elements[i].style.display = 'block';
-			}
-		}
-
-		var onInput = function(){
-			showLists();
-			var str = input.value.trim();
-
-			if (str.length > 0){
-				addTask(makeTaskHtml(str, onCheck));
-
-				input.value = '';
-				input.focus;
-			}
-
-		};
-
-		/*DATE DISPLAY */
-		// var date = new Date();
-		// document.getElementById("date-display").innerHTML = 
-		// date.getMonth() + '-' + date.getDay() + '-' + date.getFullYear();
-
-		/* ADD BUTTON LISTENER */
-		addbutton.addEventListener('click', onInput);
-
-		/* CLEAR BUTTON LISTENER */
-		clearbutton.addEventListener('click', function(){
-			if (lists.done.hasChildNodes()){
-				flushDone();
-			}
-		});
-		/*TEXT INPUT LISTENER */
-		input.addEventListener('keyup', function(event){
-			var code = event.keyCode;
-			
-			if ( code === 13 ){
-				onInput();
-			}
-		});
-
-	}());
-</script>
 	<!-- Javascript  -->
+	<script src = "js_to-do_list.js"</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
